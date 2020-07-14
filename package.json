@@ -1,0 +1,16 @@
+{
+  "name": "gifroller",
+  "version": "1.0.0",
+  "description": "Command line utility to generate rolling gifs from single images",
+  "main": "gifroller.js",
+  "author": "Marx Linden",
+  "dependencies": {
+    "gm": "^1.23.1",
+    "minimist": "^1.2.5",
+    "tmp": "^0.2.1"
+  },
+  "bin": {
+    "gifroller": "./index.js"
+  },
+  "license": "MIT"
+}
