@@ -2,8 +2,7 @@
 
 **gifroller** is both a command line utility and a JavaScript library for Node.js that converts static images into animated gifs like this:
 
-![example](example-output.gif)
-
+![example](https://raw.githubusercontent.com/marxvdl/gifroller/master/example-output.gif)
 
 ## Pre-Requisites
 
@@ -41,7 +40,7 @@ To install it only in your project, use:
         --delay=N   Duration of each frame in hundreths of a second (default=10)
         --reverse    Invert the standard loop direction
 
-The order of the arguments do not matter (except for input and output).
+The order of the arguments does not matter (except for input and output).
 
 For example, the animation on top of this page was generated with:
 

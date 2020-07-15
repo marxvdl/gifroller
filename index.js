@@ -34,7 +34,7 @@ const hframes = argv['hframes'];
 const delay = argv['delay'];
 const reverse = argv['reverse'];
 
-if (
+try {
     gifroller(
         {
             input: input,
@@ -45,7 +45,9 @@ if (
             hframes: hframes,
             delay: delay,
             reverse: reverse
-        })
-) {
+        });
     console.log("Done!");
-};
+}
+catch (err) {
+    console.log(err);
+}

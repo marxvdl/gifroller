@@ -41,7 +41,7 @@ module.exports = function (options) {
 
                     // If the image was correctly read, do all the rest:
                     checkSizeErrors();
-                    return generateGif();
+                    generateGif();
                 }
             }
         });
@@ -100,14 +100,14 @@ module.exports = function (options) {
                     }
                     else {
                         frames.push(tmpobj.name);
-                        if (++completedFrames == startedFrames) {
+                        if (++completedFrames >= startedFrames) {
                             frames.sort((a, b) => {
                                 return a.match(/frame(\d+)/)[1] - b.match(/frame(\d+)/)[1];
                             })
-                            if(options.reverse){
+                            if (options.reverse) {
                                 frames.reverse();
                             }
-                            return assembleGif(frames);
+                            assembleGif(frames);
                         }
                     }
                 });
@@ -139,7 +139,7 @@ module.exports = function (options) {
                     throw (err);
                 }
                 else {
-                    return removeTemporatyFiles(frames);
+                    removeTemporaryFiles(frames);
                 }
             });
     }
@@ -147,15 +147,9 @@ module.exports = function (options) {
     /*
      * Deletes the temporary frame images
      */
-    function removeTemporatyFiles(frames) {
+    function removeTemporaryFiles(frames) {
         for (frame of frames) {
             fs.unlinkSync(frame);
         }
-        return true;
-    }
-
-    // https://stackoverflow.com/a/10835227/641312
-    function isPositiveInteger(n) {
-        return n >>> 0 === parseFloat(n);
     }
 }
